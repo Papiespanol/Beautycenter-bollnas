@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Beautycenter Bollnäs — Skönhetssalong &amp; fotvård, Södra Bäckvägen 1D</title>
+<meta name="description" content="Skönhetssalong i Bollnäs med ljusa lokaler, trevlig personal och fotvård. Södra Bäckvägen 1D. Boka tid på 079-334 63 52.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --oat:#F7F2EB; --oat-2:#EFE6DA; --mauve:#7E6485; --mauve-deep:#5F486A; --peach:#F0CDBE; --sage:#BFD0C0; --ink:#2C2430;
+    --text:#2C2430; --muted:#6E6272; --line:rgba(44,36,48,.15);
+    --bg:var(--oat); --fg:var(--text);
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+    color-scheme:light dark;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#171319; --fg:#F4EDE6; --text:#F4EDE6; --muted:#B8ABBC; --line:rgba(244,237,230,.16);
+      --oat:#171319; --oat-2:#201A23; --mauve:#B397BC; --mauve-deep:#9A7CA5;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#171319; --fg:#F4EDE6; --text:#F4EDE6; --muted:#B8ABBC; --line:rgba(244,237,230,.16);
+    --oat:#171319; --oat-2:#201A23; --mauve:#B397BC; --mauve-deep:#9A7CA5;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px));-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--fg);font-family:Karla,"Helvetica Neue",Arial,sans-serif;font-size:clamp(16px,1.05vw,17.5px);line-height:1.7;overflow-x:hidden}
+  h1,h2,h3{font-family:Marcellus,Georgia,serif;font-weight:400;margin:0;line-height:1.1}
+  h1{font-size:clamp(2.8rem,8vw,5.6rem)}
+  h2{font-size:clamp(2rem,4.5vw,3.2rem)}
+  h3{font-size:clamp(1.3rem,2.2vw,1.65rem)}
+  p{margin:0 0 1em;max-width:60ch}
+  a{color:inherit}
+  svg{max-width:100%}
+  :focus-visible{outline:2px solid var(--mauve);outline-offset:3px;border-radius:3px}
+  .wrap{width:min(1120px,92vw);margin-inline:auto}
+  .prog{position:fixed;top:0;left:0;right:0;height:3px;background:var(--mauve);transform-origin:left;transform:scaleX(0);z-index:70}
+
+  header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);background:color-mix(in srgb,var(--bg) 80%,transparent);border-bottom:1px solid transparent;transition:border-color .3s}
+  header.nav.is-stuck{border-bottom-color:var(--line)}
+  .nav__in{display:flex;align-items:center;gap:1.4rem;height:72px}
+  .brand{margin-right:auto;text-decoration:none;font-family:Marcellus,serif;font-size:1.3rem;letter-spacing:.03em}
+  .nav a.link{display:none;text-decoration:none;color:var(--muted);font-size:.95rem}
+  .nav a.link:hover{color:var(--fg)}
+  @media (min-width:820px){.nav a.link{display:inline}}
+  .btn{display:inline-flex;align-items:center;justify-content:center;padding:.85rem 1.7rem;border-radius:999px;border:1px solid var(--mauve-deep);background:var(--mauve-deep);color:#FBF6F0;text-decoration:none;font-weight:600;font-size:.95rem;letter-spacing:.02em;transition:background .2s,transform .15s;white-space:nowrap}
+  .btn:hover{background:var(--ink);border-color:var(--ink)}
+  .btn:active{transform:translateY(1px)}
+  .btn--ghost{background:transparent;color:var(--fg);border-color:var(--line)}
+  .btn--ghost:hover{background:color-mix(in srgb,var(--fg) 8%,transparent);border-color:var(--line)}
+  :root[data-theme="dark"] .btn:not(.btn--ghost){background:var(--mauve);border-color:var(--mauve);color:#1B1320}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn:not(.btn--ghost){background:var(--mauve);border-color:var(--mauve);color:#1B1320}}
+  .nav .btn{padding:.55rem 1.2rem}
+
+  .hero{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--peach),var(--bg) 95%)}
+  :root[data-theme="dark"] .hero{background:linear-gradient(180deg,#2A202D,var(--bg) 95%)}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .hero{background:linear-gradient(180deg,#2A202D,var(--bg) 95%)}}
+  .hero__grid{display:grid;gap:2rem;align-items:center;padding:clamp(3rem,8vw,6rem) 0 clamp(3.5rem,8vw,6rem);grid-template-columns:1fr}
+  @media (min-width:900px){.hero__grid{grid-template-columns:1.1fr .9fr}}
+  .tag{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--mauve-deep);font-weight:700;margin-bottom:1rem}
+  :root[data-theme="dark"] .tag{color:var(--mauve)}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .tag{color:var(--mauve)}}
+  .hero h1 em{font-style:normal;color:var(--mauve)}
+  .lede{font-size:clamp(1.05rem,1.6vw,1.25rem);color:var(--muted);max-width:42ch;margin-top:1.2rem}
+  .cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.9rem}
+  .art{position:relative;max-width:440px;margin-inline:auto;width:100%;aspect-ratio:1}
+  .art svg{position:absolute;inset:0;width:100%;height:100%}
+  .rip{transform-box:fill-box;transform-origin:center}
+
+  .facts{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border-block:1px solid var(--line)}
+  @media (min-width:760px){.facts{grid-template-columns:repeat(4,1fr)}}
+  .facts div{background:var(--bg);padding:1.1rem 1rem;text-align:center;font-weight:700;font-size:.97rem}
+  .facts small{display:block;color:var(--muted);font-weight:400;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.15rem}
+
+  section{padding:clamp(4.2rem,9vw,7.5rem) 0}
+  .kicker{font-size:.76rem;letter-spacing:.22em;text-transform:uppercase;color:var(--mauve);font-weight:700;margin-bottom:1rem}
+  .two{display:grid;gap:clamp(2rem,5vw,4.5rem);grid-template-columns:1fr}
+  @media (min-width:900px){.two{grid-template-columns:.85fr 1.15fr;align-items:start}}
+
+  /* word-by-word reveal */
+  .story{font-family:Marcellus,Georgia,serif;font-size:clamp(1.7rem,4vw,3rem);line-height:1.3;max-width:26ch}
+  .story span{opacity:.18;transition:opacity .25s}
+  .story span.on{opacity:1}
+  @media (prefers-reduced-motion: reduce){.story span{opacity:1}}
+
+  .cards{display:grid;gap:1.1rem;margin-top:2.6rem}
+  @media (min-width:760px){.cards{grid-template-columns:repeat(3,1fr)}}
+  .card{border:1px solid var(--line);background:var(--oat-2);overflow:hidden}
+  .card figure{margin:0;aspect-ratio:16/10;display:grid;place-items:center}
+  .card svg{height:76%;width:auto}
+  .card div{padding:1.3rem 1.5rem 1.7rem}
+  .card p{color:var(--muted);font-size:.96rem;margin:.5rem 0 0}
+  .c1{background:var(--sage)}.c2{background:var(--peach)}.c3{background:#D9CCE0}
+  :root[data-theme="dark"] .card figure{filter:saturate(.75) brightness(.78)}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .card figure{filter:saturate(.75) brightness(.78)}}
+
+  .rev{background:var(--oat-2)}
+  .score{display:flex;align-items:baseline;gap:1rem}
+  .score b{font-family:Marcellus,serif;font-weight:400;font-size:5.5rem;line-height:1}
+  .stars{color:var(--mauve);letter-spacing:.2em;font-size:1.2rem}
+  .quotes{display:grid;gap:1rem}
+  .q{border-left:3px solid var(--mauve);padding:.2rem 0 .2rem 1.2rem;font-family:Marcellus,serif;font-size:1.25rem;line-height:1.4}
+  .q small{display:block;font-family:Karla,sans-serif;font-size:.82rem;color:var(--muted);margin-top:.3rem}
+
+  .map{border:1px solid var(--line);background:var(--oat-2);aspect-ratio:4/3;width:100%;display:block}
+  .addr{margin-top:1.8rem;border-top:1px solid var(--line)}
+  .addr div{display:grid;grid-template-columns:8rem 1fr;gap:1rem;padding:.9rem 0;border-bottom:1px solid var(--line)}
+  .addr dt{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .addr dd{margin:0;font-weight:700}
+  .addr a{text-decoration:none;border-bottom:1px solid var(--mauve)}
+
+  .final{background:var(--mauve-deep);color:#FBF6F0;text-align:center}
+  :root[data-theme="dark"] .final{background:#2A202D}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .final{background:#2A202D}}
+  .final h2{margin-inline:auto;max-width:15ch;color:#FBF6F0}
+  .final p{color:#E4D6E8;margin:1rem auto 0}
+  .final .cta{justify-content:center}
+  .final .btn{background:#FBF6F0;color:var(--mauve-deep);border-color:#FBF6F0}
+  .final .btn:hover{background:#fff}
+  .final .btn--ghost{background:transparent;color:#FBF6F0;border-color:rgba(251,246,240,.45)}
+  .final .btn--ghost:hover{background:rgba(251,246,240,.1)}
+
+  footer{padding:2.4rem 0;color:var(--muted);font-size:.9rem}
+  .foot{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-between}
+  footer a{text-decoration:none;color:var(--fg)}
+
+  .r{opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+  .r.is-in{opacity:1;transform:none}
+  .r[data-d="1"]{transition-delay:.1s}.r[data-d="2"]{transition-delay:.2s}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.r{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<div class="prog" id="prog"></div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__in">
+    <a class="brand" href="#top">Beautycenter Bollnäs</a>
+    <a class="link" href="#behandlingar">Behandlingar</a>
+    <a class="link" href="#omdomen">Omdömen</a>
+    <a class="link" href="#hitta">Hitta hit</a>
+    <a class="btn" href="tel:+46793346352">Boka tid</a>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap hero__grid">
+    <div>
+      <p class="tag">Skönhetssalong · Bollnäs</p>
+      <h1>Ta dig tid för <em>dig själv</em></h1>
+      <p class="lede">Ljusa, mysiga lokaler och personal som tar hand om dig – från fotvård till skönhetsbehandlingar, mitt i Bollnäs.</p>
+      <div class="cta">
+        <a class="btn" href="tel:+46793346352">Ring och boka: 079-334 63 52</a>
+        <a class="btn btn--ghost" href="#behandlingar">Se behandlingar</a>
+      </div>
+    </div>
+    <div class="art" aria-hidden="true">
+      <svg viewBox="0 0 400 400">
+        <g fill="none" stroke="#7E6485" stroke-width="1.5">
+          <circle class="rip" id="r1" cx="200" cy="230" r="70" opacity=".45"/>
+          <circle class="rip" id="r2" cx="200" cy="230" r="110" opacity=".3"/>
+          <circle class="rip" id="r3" cx="200" cy="230" r="150" opacity=".18"/>
+        </g>
+        <g id="lotus">
+          <path d="M200 300c-48-6-78-48-70-96 30 8 58 40 70 96z" fill="#E7B2BD"/>
+          <path d="M200 300c48-6 78-48 70-96-30 8-58 40-70 96z" fill="#E7B2BD"/>
+          <path d="M200 300c-30-30-40-84 0-136 40 52 30 106 0 136z" fill="#F3CDD3"/>
+          <path d="M200 300c-70-4-110-34-120-72 40-2 92 22 120 72z" fill="#D99AA8"/>
+          <path d="M200 300c70-4 110-34 120-72-40-2-92 22-120 72z" fill="#D99AA8"/>
+          <circle cx="200" cy="262" r="6" fill="#F4C65B"/>
+        </g>
+        <ellipse cx="200" cy="312" rx="100" ry="10" fill="#7E6485" opacity=".18"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<div class="facts">
+  <div><small>Betyg</small>4,9 ★ Google</div>
+  <div><small>Adress</small>Södra Bäckvägen 1D</div>
+  <div><small>Telefon</small>079-334 63 52</div>
+  <div><small>Känsla</small>Ljust &amp; mysigt</div>
+</div>
+
+<section>
+  <div class="wrap">
+    <p class="kicker r">Om salongen</p>
+    <p class="story" id="story">Ljusa lokaler, duktig personal och en lugn stund bara för dig.</p>
+  </div>
+</section>
+
+<section id="behandlingar" style="padding-top:0">
+  <div class="wrap">
+    <div class="two">
+      <div class="r"><p class="kicker">Behandlingar</p><h2>Vi tar hand om dig</h2></div>
+      <div class="r" data-d="1"><p style="font-size:1.2rem;max-width:38ch">Fotvård är något gästerna särskilt nämner. Ring för att höra om hela utbudet och boka din tid.</p></div>
+    </div>
+    <div class="cards">
+      <article class="card r">
+        <figure class="c1"><svg viewBox="0 0 120 120" role="img" aria-label="Illustration av stenar och vatten för fotvård"><ellipse cx="60" cy="92" rx="46" ry="10" fill="#7FA08A" opacity=".5"/><ellipse cx="46" cy="78" rx="20" ry="9" fill="#8B7A93"/><ellipse cx="74" cy="70" rx="16" ry="8" fill="#6E5F77"/><ellipse cx="58" cy="60" rx="12" ry="6" fill="#A596AD"/><path d="M40 40q20-16 40 0" fill="none" stroke="#5F486A" stroke-width="3" stroke-linecap="round"/></svg></figure>
+        <div><h3>Fotvård</h3><p>Omtyckt av gästerna – skön och noggrann vård för dina fötter.</p></div>
+      </article>
+      <article class="card r" data-d="1">
+        <figure class="c2"><svg viewBox="0 0 120 120" role="img" aria-label="Illustration av en blomma"><g transform="translate(60 62)"><g fill="#E7B2BD"><ellipse rx="12" ry="28" transform="rotate(0) translate(0 -26)"/><ellipse rx="12" ry="28" transform="rotate(72) translate(0 -26)"/><ellipse rx="12" ry="28" transform="rotate(144) translate(0 -26)"/><ellipse rx="12" ry="28" transform="rotate(216) translate(0 -26)"/><ellipse rx="12" ry="28" transform="rotate(288) translate(0 -26)"/></g><circle r="11" fill="#F4C65B"/></g></svg></figure>
+        <div><h3>Skönhetsvård</h3><p>Behandlingar för dig som vill unna dig något extra. Ring och fråga om utbudet.</p></div>
+      </article>
+      <article class="card r" data-d="2">
+        <figure class="c3"><svg viewBox="0 0 120 120" role="img" aria-label="Illustration av en kalender"><rect x="22" y="28" width="76" height="70" rx="8" fill="#FBF6F0" stroke="#7E6485" stroke-width="3"/><path d="M22 48h76" stroke="#7E6485" stroke-width="3"/><path d="M42 22v14M78 22v14" stroke="#7E6485" stroke-width="4" stroke-linecap="round"/><g fill="#C9A3D0"><circle cx="44" cy="64" r="5"/><circle cx="62" cy="64" r="5"/><circle cx="80" cy="64" r="5"/><circle cx="44" cy="82" r="5"/></g><circle cx="62" cy="82" r="6" fill="#7E6485"/></svg></figure>
+        <div><h3>Boka din tid</h3><p>Ring 079-334 63 52 så hittar vi en tid som passar dig.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="rev" id="omdomen">
+  <div class="wrap two">
+    <div class="r">
+      <p class="kicker">Omdömen</p>
+      <div class="score"><b>4,9</b><span class="stars" aria-label="Fem stjärnor">★★★★★</span></div>
+      <p style="color:var(--muted);margin-top:.4rem">Snittbetyg från 10 Google-omdömen</p>
+    </div>
+    <div class="quotes r" data-d="1">
+      <div class="q">“Ljusa fina lokaler och en jätte trevlig fotvård.”<small>Google-omdöme</small></div>
+      <div class="q">“Mysig salong med duktig och trevlig personal.”<small>Google-omdöme</small></div>
+      <div class="q">“Professionell och trevlig personal.”<small>Google-omdöme</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="hitta">
+  <div class="wrap two">
+    <div class="r">
+      <p class="kicker">Hitta hit</p>
+      <h2>Södra Bäckvägen 1D</h2>
+      <dl class="addr">
+        <div><dt>Adress</dt><dd>Södra Bäckvägen 1D, 821 35 Bollnäs</dd></div>
+        <div><dt>Telefon</dt><dd><a href="tel:+46793346352">079-334 63 52</a></dd></div>
+        <div><dt>Plus code</dt><dd>9C54+8V Bollnäs</dd></div>
+        <div><dt>Öppettider</dt><dd><a href="https://www.google.com/maps/search/?api=1&amp;query=Beautycenter%20Bolln%C3%A4s%20S%C3%B6dra%20B%C3%A4ckv%C3%A4gen%201D" target="_blank" rel="noopener">Se tider på Google Maps</a></dd></div>
+      </dl>
+      <div class="cta"><a class="btn" href="tel:+46793346352">Ring och boka</a><a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&amp;query=S%C3%B6dra%20B%C3%A4ckv%C3%A4gen%201D%2C%20821%2035%20Bolln%C3%A4s" target="_blank" rel="noopener">Vägbeskrivning</a></div>
+    </div>
+    <div class="r" data-d="1">
+      <svg class="map" viewBox="0 0 420 315" role="img" aria-label="Förenklad karta över salongens läge i Bollnäs">
+        <rect width="420" height="315" fill="var(--oat-2)"/>
+        <g stroke="var(--line)" stroke-width="7" fill="none"><path d="M70 0V315M310 0V315M0 90H420M0 230H420"/></g>
+        <circle cx="190" cy="160" r="34" fill="none" stroke="var(--mauve)" stroke-width="1.5" opacity=".7"/>
+        <rect x="166" y="140" width="48" height="40" fill="var(--mauve-deep)"/>
+        <text x="226" y="156" font-family="Karla, sans-serif" font-size="13" fill="var(--fg)">Beautycenter</text>
+        <text x="226" y="173" font-family="Karla, sans-serif" font-size="11" fill="var(--muted)">Södra Bäckvägen 1D</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2 class="r">Unna dig en stund för dig</h2>
+    <p class="r" data-d="1">Ring oss på 079-334 63 52 så hittar vi en tid.</p>
+    <div class="cta r" data-d="2"><a class="btn" href="tel:+46793346352">Ring och boka</a><a class="btn btn--ghost" href="#hitta">Hitta hit</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div><b style="font-family:Marcellus,serif;font-weight:400;font-size:1.2rem">Beautycenter Bollnäs</b><br>Södra Bäckvägen 1D, 821 35 Bollnäs</div>
+    <div><a href="tel:+46793346352">079-334 63 52</a> &nbsp; <a href="#behandlingar">Behandlingar</a> &nbsp; <a href="#hitta">Hitta hit</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var story=document.getElementById('story');
+  var words=story.textContent.trim().split(/\s+/);
+  story.innerHTML=words.map(function(w){return '<span>'+w+'</span>'}).join(' ');
+  var spans=[].slice.call(story.querySelectorAll('span'));
+
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -12% 0px',threshold:.15});
+  document.querySelectorAll('.r').forEach(function(el){io.observe(el)});
+
+  var prog=document.getElementById('prog'),nav=document.getElementById('nav'),
+      rip=[].slice.call(document.querySelectorAll('.rip')),lotus=document.getElementById('lotus'),t=false;
+  function frame(){
+    t=false;
+    var y=scrollY,max=Math.max(document.body.scrollHeight-innerHeight,1);
+    prog.style.transform='scaleX('+Math.min(y/max,1)+')';
+    nav.classList.toggle('is-stuck',y>24);
+    if(reduce)return;
+    rip.forEach(function(c,i){c.style.transform='scale('+(1+y*(0.0012+i*0.0006))+')';c.style.opacity=Math.max(.04,(.45-i*.13)-y*.0003)});
+    lotus.style.transform='translateY('+(y*0.06)+'px)';
+    var r=story.getBoundingClientRect(),p=Math.min(Math.max((innerHeight*.85-r.top)/(innerHeight*.55),0),1),n=Math.round(p*spans.length);
+    spans.forEach(function(s,i){s.classList.toggle('on',i<n)});
+  }
+  function on(){if(!t){t=true;requestAnimationFrame(frame)}}
+  addEventListener('scroll',on,{passive:true});addEventListener('resize',on);
+  if(reduce)spans.forEach(function(s){s.classList.add('on')});
+  frame();
+})();
+</script>
+</body>
+</html>
